@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+
+.nav_bar {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    position: sticky;
+    align-items: center;
+    height: 4rem;
+    width: 100%; 
+}
+
+.logo {
+    color: white;
+    margin-left: 2rem;
+    width: 50%;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    color: white;
+    margin-right: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-decoration: inherit;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.nav_buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    justify-items: right;
+    justify-content: right;
+    list-style: none;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

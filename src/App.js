@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+import "./App.css";
+import AuthContext from "./store/authContext";
+import React, { useContext } from "react";
 
-function App() {
+import Header from "./Header/Header";
+import Home from "./components/Home/Home";
+import Auth from "./components/Auth";
+import Form from "./components/Form";
+import Badges from "./components/Badges";
+
+const App = () => {
+  const authCtx = useContext(AuthContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/auth"
+          // basically saying you can only route to these pages if there is a authCtx token that exists
+          element={!authCtx.token ? <Auth /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/form"
+          element={authCtx.token ? <Form /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/badges"
+          element={authCtx.token ? <Badges /> : <Navigate to="/badges" />}
+        />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,11 @@
+.np_list {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    align-items: center;
+    padding-right: auto;
+    padding-left: auto;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
