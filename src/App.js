@@ -5,9 +5,9 @@ import React, { useContext } from "react";
 
 import Header from "./Header/Header";
 import Home from "./components/Home/Home";
-import Auth from "./components/Auth";
-import Form from "./components/Form";
-import Badges from "./components/Badges";
+import Auth from "./components/Auth/Auth";
+import Badges from "./components/Badges/Badges";
+import NationalParkDetails from "./components/NationalParkDetails/NationalParkDetails";
 
 const App = () => {
   const authCtx = useContext(AuthContext);
@@ -19,17 +19,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route
           path="/auth"
-          // basically saying you can only route to these pages if there is a authCtx token that exists
           element={!authCtx.token ? <Auth /> : <Navigate to="/" />}
-        />
-        <Route
-          path="/form"
-          element={authCtx.token ? <Form /> : <Navigate to="/auth" />}
         />
         <Route
           path="/badges"
           element={authCtx.token ? <Badges /> : <Navigate to="/badges" />}
         />
+        <Route path="park/:parkCode" element={<NationalParkDetails />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

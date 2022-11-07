@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import axios from "axios";
-import AuthContext from "../store/authContext";
+import AuthContext from "../../store/authContext";
+import styles from "./Auth.module.css";
 // creating a variable called auth
 const Auth = () => {
   // creating 3 peices of state for the username, password, and if the are registering
@@ -33,26 +34,30 @@ const Auth = () => {
   };
 
   return (
-    <main>
-      <h1>Welcome!</h1>
-      <form className="form auth-form" onSubmit={submitHandler}>
+    <main className={styles.ls_form}>
+      <form className={styles.auth_form} onSubmit={submitHandler}>
         <input
           type="text"
           placeholder="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="form-input"
+          className={styles.form_input}
         />
         <input
           type="password"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="form-input"
+          className={styles.form_input}
         />
-        <button className="form-btn">{register ? "Sign Up" : "Login"}</button>
+        <button className={styles.form_btn}>
+          {register ? "Sign Up" : "Login"}
+        </button>
       </form>
-      <button onClick={(e) => setRegister(!register)} className="form-btn">
+      <button
+        onClick={(e) => setRegister(!register)}
+        className={styles.form_btn_ls}
+      >
         Need to {register ? "Login" : "Sign Up"}?
       </button>
     </main>

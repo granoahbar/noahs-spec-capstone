@@ -7,49 +7,45 @@ import AuthContext from "../store/authContext";
 const Header = () => {
   const authCtx = useContext(AuthContext);
   // function for adding style to a nav link if it is active
-  const styleActiveLink = ({ isActive }) => {
-    return {
-      // if the link is active, then set the color to what is outlined below
-      color: isActive ? "#f57145" : "#FFFFFF",
-    };
-  };
+  // const styleActiveLink = ({ isActive }) => {
+  //   return {
+  //     // if the link is active, then set the color to what is outlined below
+  //     color: isActive ? "#f57145" : "#FFFFFF",
+  //   };
+  // };
   // returnin the JSX with everything that is making up the header and adding the active link style functionality to the links
   return (
     <nav className={styles.nav_bar}>
-      <h1 className={styles.logo}>National Parks</h1>
+      <h1 className={styles.logo}>My National Parks</h1>
       {authCtx.token ? (
         <ul className={styles.nav_buttons}>
           <li>
-            <NavLink style={{ styleActiveLink, textDecoration: "none" }} to="/">
+            <NavLink style={{ textDecoration: "none" }} to="/">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              style={{ styleActiveLink, textdecoration: "none" }}
-              to="badges"
-            >
+            <NavLink style={{ textDecoration: "none" }} to="badges">
               My Badges
             </NavLink>
           </li>
           <li>
             <li className="logout-btn" onClick={() => authCtx.logout()}>
-              Logout
+              <NavLink style={{ textDecoration: "none" }} to="/">
+                Logout
+              </NavLink>
             </li>
           </li>
         </ul>
       ) : (
         <ul className={styles.nav_buttons}>
           <li>
-            <NavLink style={{ styleActiveLink, textDecoration: "none" }} to="/">
+            <NavLink style={{ textDecoration: "none" }} to="/">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              style={{ styleActiveLink, textDecoration: "none" }}
-              to="/auth"
-            >
+            <NavLink style={{ textDecoration: "none" }} to="/auth">
               Login or Sign Up
             </NavLink>
           </li>

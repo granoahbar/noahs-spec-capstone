@@ -1,30 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 .nav_bar {
     display: flex;
     flex-direction: row;
-    background-color: rgb(0, 0, 0);
-    position: sticky;
+    background-color: rgb(255, 255, 255);
     align-items: center;
     height: 4rem;
     width: 100%; 
+    text-decoration: none;
+    box-shadow: 0px 0px 4px 1px rgb(226, 229, 233);
+    position: fixed;
 }
 
 .logo {
-    color: white;
+    color: black;
     margin-left: 2rem;
     width: 50%;
     cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.logo:hover {
+    cursor: pointer;
 }
 
 li {
-    color: white;
+    color: black;
     margin-right: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
     text-decoration: none;
-    text-decoration: inherit;
 }
 
 li:hover {
@@ -40,6 +47,15 @@ li:hover {
     justify-content: right;
     list-style: none;
     font-size: small;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
 }
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
 

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AuthContext from "../../store/authContext";
 import NationalParkCard from "../NationalParkCard/NationalParkCard";
 import styles from "./Home.module.css";
 
-export default function Home() {
+export default function Home(props) {
   const [parks, setParks] = useState([]);
 
   const getNationalParks = () => {
@@ -29,10 +28,11 @@ export default function Home() {
   useEffect(() => {
     getNationalParks();
   }, []);
-
   return (
-    <div className={styles.np_list}>
-      <NationalParkCard parks={parks} />
-    </div>
+    <>
+      <div className={styles.np_list}>
+        <NationalParkCard parks={parks} />
+      </div>
+    </>
   );
 }
