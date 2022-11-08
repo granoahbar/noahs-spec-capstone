@@ -35,6 +35,10 @@ const Auth = () => {
 
   return (
     <main className={styles.ls_form}>
+      <p>
+        Login or Sign up to view details about national parks, and collect
+        badges for the parks that you have visited!
+      </p>
       <form className={styles.auth_form} onSubmit={submitHandler}>
         <input
           type="text"

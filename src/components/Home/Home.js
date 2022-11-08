@@ -3,7 +3,7 @@ import axios from "axios";
 import NationalParkCard from "../NationalParkCard/NationalParkCard";
 import styles from "./Home.module.css";
 
-export default function Home(props) {
+export default function Home() {
   const [parks, setParks] = useState([]);
 
   const getNationalParks = () => {
