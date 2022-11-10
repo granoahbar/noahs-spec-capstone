@@ -1,0 +1,49 @@
+const { User } = require("../models/user");
+const { Badge } = require("../models/badge");
+
+module.exports = {
+  addBadge: async (req, res) => {
+    try {
+      const { name, userId } = req.body;
+      await Post.create({ name, userId });
+      res.sendStatus(200);
+    } catch (error) {
+      console.log("ERROR IN getCurrentUserPosts");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
+
+  getCurrentUserBadges: async (req, res) => {
+    try {
+      const { userId } = req.params;
+      const badges = await Badge.findAll({
+        where: { userId: userId },
+        include: [
+          {
+            model: User,
+            required: true,
+            attributes: [`username`],
+          },
+        ],
+      });
+      res.status(200).send(badges);
+    } catch (error) {
+      console.log("ERROR IN getCurrentUserBadges");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
+
+  deleteBadge: async (req, res) => {
+    try {
+      const { id } = req.params;
+      await Badge.destroy({ where: { id: +id } });
+      res.sendStatus(200);
+    } catch (error) {
+      console.log("ERROR IN getCurrentUserPosts");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
+};

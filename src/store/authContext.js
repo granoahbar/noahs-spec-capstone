@@ -69,13 +69,11 @@ export const AuthContextProvider = (props) => {
     const remainingTime = calculateRemainingTime(exp);
     logoutTimer = setTimeout(logout, remainingTime);
   };
-
   useEffect(() => {
     if (localData) {
       logoutTimer = setTimeout(logout, localData.duration);
     }
   }, [localData, logout]);
-
   const contextValue = {
     token,
     login,

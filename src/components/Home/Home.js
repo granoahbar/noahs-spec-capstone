@@ -31,7 +31,11 @@ export default function Home() {
   return (
     <>
       <div className={styles.np_list}>
-        <NationalParkCard parks={parks} />
+        {!parks[0] ? (
+          <h3>loading national parks...</h3>
+        ) : (
+          <NationalParkCard parks={parks} />
+        )}
       </div>
     </>
   );

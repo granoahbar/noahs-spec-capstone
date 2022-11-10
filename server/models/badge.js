@@ -2,14 +2,15 @@ const { DataTypes } = require("sequelize");
 const { sequelize } = require("../util/database");
 
 module.exports = {
-  Post: sequelize.define("badge", {
-    id: {
+  Badge: sequelize.define("badge", {
+    badgeId: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
+      autoIncrement: false,
       allowNull: false,
       primaryKey: true,
     },
-    name: DataTypes.STRING,
-    content: DataTypes.TEXT,
+    parkCode: DataTypes.STRING,
+    parkName: DataTypes.STRING,
+    parkImgUrl: DataTypes.STRING,
   }),
 };
