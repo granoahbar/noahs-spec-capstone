@@ -4,11 +4,11 @@ const { Badge } = require("../models/badge");
 module.exports = {
   addBadge: async (req, res) => {
     try {
-      const { name, userId } = req.body;
-      await Post.create({ name, userId });
+      const { parkCode, parkName, parkImgUrl, userId } = req.body;
+      await Badge.create({ parkCode, parkName, parkImgUrl, userId });
       res.sendStatus(200);
     } catch (error) {
-      console.log("ERROR IN getCurrentUserPosts");
+      console.log("ERROR IN addBadge");
       console.log(error);
       res.sendStatus(400);
     }

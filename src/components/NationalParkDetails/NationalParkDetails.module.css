@@ -87,7 +87,7 @@ button:hover {
 }
 
 .banner_img {
-    height: 180px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -104,6 +104,12 @@ h2 {
     margin-right: 5rem;
     align-content: center;
     text-align: center;
+}
+
+.loading {
+    display: flex;
+    align-self: center;
+    margin-top: 5rem;
 }
 
 

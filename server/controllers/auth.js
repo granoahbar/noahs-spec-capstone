@@ -52,6 +52,7 @@ module.exports = {
     try {
       const { username, password } = req.body;
       let foundUser = await User.findOne({ where: { username } });
+      console.log("HIIIIIIIIIIIII", foundUser.dataValues);
       if (foundUser) {
         const isAuthenticated = bcrypt.compareSync(
           password,
@@ -61,12 +62,13 @@ module.exports = {
         if (isAuthenticated) {
           const token = createToken(
             foundUser.dataValues.username,
-            foundUser.dataValues.id
+            foundUser.dataValues.userId
           );
+
           const exp = Date.now() + 1000 * 60 * 60 * 48;
           res.status(200).send({
             username: foundUser.dataValues.username,
-            userId: foundUser.dataValues.id,
+            userId: foundUser.dataValues.userId,
             token,
             exp,
           });

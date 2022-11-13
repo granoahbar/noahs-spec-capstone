@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import styles from "./NationalParkDetails.module.css";
-import AuthContext from "../store/authContext";
+import AuthContext from "../../store/authContext";
 
 function NationalParkDetails() {
   const { token, userId } = useContext(AuthContext);
@@ -32,26 +32,20 @@ function NationalParkDetails() {
     setOpenWeather(!openWeather);
   };
 
-  const parkName = park.data[0].fullName;
-  const parkImgUrl = park.data[0].images[1].url;
-
   const handleCollectBadge = (e) => {
     // preventing default
     e.preventDefault();
-
     // sending data to data base with axios using the following end point
     axios
-      .post(
-        "/badges",
-        // body obj of title content status and userId
-        { parkCode, parkName, parkImgUrl, userId },
-        // user had to be authorized
-        {
-          headers: {
-            authorization: token,
-          },
-        }
-      )
+      .post("http://localhost:4005/badges", {
+        parkCode: park.data[0].parkCode,
+        parkName: park.data[0].fullName,
+        parkImgUrl: park.data[0].images[1].url,
+        userId: userId,
+        headers: {
+          authorization: token,
+        },
+      })
       .then(() => {
         alert("Way to go! You have collected another badge!");
       })
@@ -61,7 +55,7 @@ function NationalParkDetails() {
   return (
     <div className={styles.details_page}>
       {!park.data ? (
-        <h3>loading...</h3>
+        <h3 className={styles.loading}>Loading park details...</h3>
       ) : (
         <>
           <img className={styles.banner_img} src={park.data[0].images[1].url} />

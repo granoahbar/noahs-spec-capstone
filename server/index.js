@@ -11,20 +11,22 @@ const { Badge } = require("./models/badge");
 const { getCurrentUserBadges } = require("./controllers/badges");
 const { register, login } = require("./controllers/auth");
 const { isAuthenticated } = require("./middleware/isAuthenticated");
+const { addBadge } = require("./controllers/badges");
 // setting variable app to express() so we do not have to say that over and over again
 const app = express();
 // we want JSON data!
 app.use(express.json());
 app.use(cors());
 
-Badge.belongsTo(User, { foreignKey: "id_manager" });
-User.hasMany(Badge, { foreignKey: "id_manager" });
+Badge.hasMany(User, { foreignKey: "userId" });
+User.hasMany(Badge, { foreignKey: "id" });
 
 //AUTH
 app.post("/register", register);
 app.post("/login", login);
 
 // CRUD POSTS - auth required
+app.post("/badges", addBadge);
 // letting the back end know what is going to need auth to do
 app.get("/userbadges/:userId", isAuthenticated, getCurrentUserBadges);
 // app.post("/posts", isAuthenticated, addBadge);

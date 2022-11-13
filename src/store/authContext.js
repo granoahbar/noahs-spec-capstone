@@ -18,20 +18,20 @@ const calculateRemainingTime = (exp) => {
 const getLocalData = () => {
   const storedToken = localStorage.getItem("token");
   const storedExp = localStorage.getItem("exp");
-  const storedId = localStorage.getItem("userId");
+  // const storedId = localStorage.getItem("userId");
   const remainingTime = calculateRemainingTime(storedExp);
 
   if (remainingTime <= 1000 * 60 * 30) {
     localStorage.removeItem("token");
     localStorage.removeItem("exp");
-    localStorage.removeItem("userId");
+    // localStorage.removeItem("userId");
 
     return null;
   }
   return {
     token: storedToken,
     duration: remainingTime,
-    userId: storedId,
+    // userId: storedId,
   };
 };
 
@@ -46,7 +46,7 @@ export const AuthContextProvider = (props) => {
   }
 
   const [token, setToken] = useState(initialToken);
-  const [userId, setUserId] = useState(initialId);
+  const [userId, setUserId] = useState(null);
 
   const logout = useCallback(() => {
     setToken(null);
@@ -61,6 +61,7 @@ export const AuthContextProvider = (props) => {
   }, []);
 
   const login = (token, exp, userId) => {
+    console.log({ userId });
     setToken(token);
     setUserId(userId);
     localStorage.setItem("token", token);
@@ -74,12 +75,15 @@ export const AuthContextProvider = (props) => {
       logoutTimer = setTimeout(logout, localData.duration);
     }
   }, [localData, logout]);
+
   const contextValue = {
     token,
     login,
     logout,
     userId,
   };
+
+  console.log({ contextValue });
 
   return (
     <AuthContext.Provider value={contextValue}>
