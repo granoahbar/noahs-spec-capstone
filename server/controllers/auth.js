@@ -30,13 +30,13 @@ module.exports = {
         const newUser = await User.create({ username, hashedPass: hash });
         const token = createToken(
           newUser.dataValues.username,
-          newUser.dataValues.id
+          newUser.dataValues.userId
         );
         console.log("TOOOOOOKEN", token);
         const exp = Date.now() + 1000 * 60 * 60 * 48;
         res.status(200).send({
           username: newUser.dataValues.username,
-          userId: newUser.dataValues.id,
+          userId: newUser.dataValues.userId,
           token,
           exp,
         });

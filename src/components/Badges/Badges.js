@@ -13,7 +13,7 @@ export default function Badges() {
       authorization: token,
     };
     axios
-      .get(`http://localhost:4005/badges/:${userId}`, { headers })
+      .get(`http://localhost:4005/badges/${userId}`, { headers })
       .then((res) => setBadges(res.data))
       .catch((err) => console.log(err));
   };
