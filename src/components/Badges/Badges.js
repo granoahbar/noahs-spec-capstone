@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import AuthContext from "../../store/authContext";
+import styles from "./Badges.module.css";
+import Badge from "../Badge/Badge";
 
 export default function Badges() {
   const { userId, token } = useContext(AuthContext);
@@ -22,5 +24,15 @@ export default function Badges() {
     getUserBadges();
   }, []);
 
-  return <div>badge</div>;
+  return (
+    <div className={styles.badges_disp}>
+      {!badges ? (
+        <h3>loading your badges...</h3>
+      ) : (
+        <div className={styles.badges_disp}>
+          <Badge badges={badges} />{" "}
+        </div>
+      )}
+    </div>
+  );
 }

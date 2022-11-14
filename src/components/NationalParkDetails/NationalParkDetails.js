@@ -14,8 +14,6 @@ function NationalParkDetails() {
   const [openLatLon, setOpenLatLon] = useState(false);
   const [openLearnMore, setOpenLearnMore] = useState(false);
 
-  console.log(park);
-
   useEffect(() => {
     axios
       .get(

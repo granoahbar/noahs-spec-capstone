@@ -1,0 +1,26 @@
+.badge_img {
+    display: flex;
+    align-self: center;
+    object-fit: cover;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    border-width: .25rem;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0px 0px 6px 2px rgb(212, 218, 227);
+    margin-top: 2rem;
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.park_name {
+    font-size: 1rem;
+    width: 10rem;
+    text-align: center;
+}

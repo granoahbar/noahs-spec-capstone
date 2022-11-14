@@ -1,0 +1,14 @@
+.badges_disp {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5rem;
+    flex-wrap: wrap;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    justify-content: center;
+}
+
+.loading {
+    display: flex;
+    align-self: center;
+}
