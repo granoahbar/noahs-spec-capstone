@@ -19,13 +19,6 @@ module.exports = {
       const { userId } = req.params;
       const badges = await Badge.findAll({
         where: { userId: userId },
-        include: [
-          {
-            model: User,
-            required: true,
-            attributes: [`username`],
-          },
-        ],
       });
       res.status(200).send(badges);
     } catch (error) {

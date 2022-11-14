@@ -6,26 +6,21 @@
     flex-direction: column;
     align-items: left;
     text-align: left;
-    padding-top: 3rem;
     color: black;
     font-family: 'Lato', sans-serif;
-}
-
-h1 {
-    display: flex;
-    align-self: center;
 }
 
 .hours_of_op {
     display: flex;
     flex-direction: column;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    padding: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
 .days_times{
     display: flex;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
 .days, .times {
@@ -33,83 +28,107 @@ h1 {
 }
 
 .banner {
-    height: 200px;
+    height: 20rem;
     display: flex;
     width: 100vw;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    margin-bottom: 30px;
     font-size: 15px;
+    margin-top: 5rem;
+    object-fit: cover;
 }
 
 .hours_desc {
     width: 100%;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-size: 1rem;
 }
 
 button {
-    width: 80%;
-    margin-top: 2rem;
-    padding: 10px;
+    width: 100vw;
+    padding: .5rem;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
-    border-style: none;
-    border-radius: 4px;
-    box-shadow: 0px 0px 4px 1px rgb(212, 218, 227);
-    align-self: center;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0px -5px 5px -2px rgb(212, 218, 227);
+    text-align: left;
+    font-size: large;
+    height: 4rem;
+    font-weight: 600;
 }
 
 button:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 6px 4px rgb(209, 214, 216);
 }
 
 .badge {
     display: flex;
     align-self: center;
     object-fit: cover;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 100px;
-    margin:.5rem;
-    border-width: 4px;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    border-width: .25rem;
     border-style: solid;
     border-color: white;
     box-shadow: 0px 0px 6px 2px rgb(212, 218, 227);
+    margin-top: 2rem;
 }
 .badge:hover {
-    width: 7.5rem;
-    height: 7.5rem;
     cursor: pointer;
-    box-shadow: 0px 0px 7px 6px rgb(209, 214, 216);
-    margin-bottom: 0;
 }
 
-.banner_img {
-    height: 250px;
-    object-fit: cover;
-}
-
-h2 {
+h1 {
     display: flex;
     align-self: center;
+    font-size: 1rem;
 }
 
 .badge_disp {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 5rem;
-    margin-right: 5rem;
     align-content: center;
     text-align: center;
+    margin-bottom: 2rem;
+    width: 33.33%;
 }
 
 .loading {
     display: flex;
     align-self: center;
     margin-top: 5rem;
+}
+
+.learn_more_link {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.main_sect {
+    display: flex;
+    flex-direction: row;
+}
+
+.desc_disp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    width: 66.66%;
+}
+
+#desc {
+    width: 70%;
 }
 
 

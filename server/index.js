@@ -28,7 +28,7 @@ app.post("/login", login);
 // CRUD POSTS - auth required
 app.post("/badges", addBadge);
 // letting the back end know what is going to need auth to do
-app.get("/userbadges/:userId", isAuthenticated, getCurrentUserBadges);
+app.get("/badges/:userId", isAuthenticated, getCurrentUserBadges);
 // app.post("/posts", isAuthenticated, addBadge);
 // app.delete("/posts/:id", isAuthenticated, deleteBadge);
 

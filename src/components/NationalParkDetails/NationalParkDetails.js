@@ -11,6 +11,8 @@ function NationalParkDetails() {
   const [park, setPark] = useState([{}]);
   const [open, setOpen] = useState(false);
   const [openWeather, setOpenWeather] = useState(false);
+  const [openLatLon, setOpenLatLon] = useState(false);
+  const [openLearnMore, setOpenLearnMore] = useState(false);
 
   console.log(park);
 
@@ -32,6 +34,14 @@ function NationalParkDetails() {
     setOpenWeather(!openWeather);
   };
 
+  const handleOpenLatLon = () => {
+    setOpenLatLon(!openLatLon);
+  };
+
+  const handleOpenLearnMore = () => {
+    setOpenLearnMore(!openLearnMore);
+  };
+
   const handleCollectBadge = (e) => {
     // preventing default
     e.preventDefault();
@@ -42,9 +52,6 @@ function NationalParkDetails() {
         parkName: park.data[0].fullName,
         parkImgUrl: park.data[0].images[1].url,
         userId: userId,
-        headers: {
-          authorization: token,
-        },
       })
       .then(() => {
         alert("Way to go! You have collected another badge!");
@@ -58,20 +65,23 @@ function NationalParkDetails() {
         <h3 className={styles.loading}>Loading park details...</h3>
       ) : (
         <>
-          <img className={styles.banner_img} src={park.data[0].images[1].url} />
-          <h2>{park.data[0].fullName}</h2>
-          <section className={styles.badge_disp}>
-            <img
-              onClick={handleCollectBadge}
-              className={styles.badge}
-              src={park.data[0].images[1].url}
-            />
-            <p>Have you been here? Collect your badge!</p>
-          </section>
+          <img className={styles.banner} src={park.data[0].images[0].url} />
+          <div className={styles.main_sect}>
+            <section className={styles.badge_disp}>
+              <img
+                onClick={handleCollectBadge}
+                className={styles.badge}
+                src={park.data[0].images[0].url}
+              />
+            </section>
+            <section className={styles.desc_disp}>
+              <h2>{park.data[0].fullName}</h2>
+              <p id={styles.desc}>{park.data[0].description}</p>
+            </section>
+          </div>
           <button onClick={handleOpen}>Hours of Operation</button>
           {open ? (
             <section className={styles.hours_of_op}>
-              <h3>Hours of Operation</h3>
               <p className={styles.hours_desc}>
                 {park.data[0].operatingHours[0].description}
               </p>
@@ -104,8 +114,26 @@ function NationalParkDetails() {
           <button onClick={handleOpenWeather}>What The Weather is Like</button>
           {openWeather ? (
             <section className={styles.hours_of_op}>
-              <h3>Weather</h3>
               <p className={styles.hours_desc}>{park.data[0].weatherInfo}</p>
+            </section>
+          ) : (
+            <div></div>
+          )}
+          <button onClick={handleOpenLatLon}>Coordinates</button>
+          {openLatLon ? (
+            <section className={styles.hours_of_op}>
+              <p className={styles.hours_desc}>{park.data[0].latLong}</p>
+            </section>
+          ) : (
+            <div></div>
+          )}
+          <button onClick={handleOpenLearnMore}>Learn More</button>
+          {openLearnMore ? (
+            <section className={styles.hours_of_op}>
+              <div className={styles.learn_more_link}>
+                <p>view more about {park.data[0].fullName} at</p>
+                <a href={park.data[0].url}>{park.data[0].url}</a>
+              </div>
             </section>
           ) : (
             <div></div>

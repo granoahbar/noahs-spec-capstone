@@ -63,7 +63,9 @@ main {
     align-content: center;
 }
 
+
 p {
     font-family: 'Lato', sans-serif;
     width: 450px;
+    margin-top: 5rem;
 }

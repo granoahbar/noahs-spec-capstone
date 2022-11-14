@@ -4,22 +4,26 @@
 
 .nav_bar {
     display: flex;
+    background-color: white;
     flex-direction: row;
-    background-color: rgb(255, 255, 255);
     align-items: center;
-    height: 4rem;
-    width: 100%; 
+    height: 5rem;
+    width: 100vw; 
     text-decoration: none;
     position: fixed;
+    /* box-shadow: 0px 0px 5px 1px rgb(212, 218, 227); */
 }
 
 .logo {
+    display: flex;
     color: black;
-    margin-left: 2rem;
+    margin-left: 1rem;
     width: 50%;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
+    font-size: 2rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .logo:hover {
@@ -28,7 +32,7 @@
 
 li {
     color: black;
-    margin-right: 2rem;
+    margin-right: 1rem;
     font-family: 'Lato', sans-serif;
     text-decoration: none;
 }
@@ -42,10 +46,9 @@ li:hover {
     flex-direction: row;
     align-items: center;
     width: 50%;
-    justify-items: right;
     justify-content: right;
     list-style: none;
-    font-size: small;
+    font-size: 1rem;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     color: black;
