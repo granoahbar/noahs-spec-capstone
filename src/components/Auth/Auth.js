@@ -57,13 +57,13 @@ const Auth = () => {
         <button className={styles.form_btn}>
           {register ? "Sign Up" : "Login"}
         </button>
+        <button
+          onClick={(e) => setRegister(!register)}
+          className={styles.form_btn_ls}
+        >
+          Need to {register ? "Login" : "Sign Up"}?
+        </button>
       </form>
-      <button
-        onClick={(e) => setRegister(!register)}
-        className={styles.form_btn_ls}
-      >
-        Need to {register ? "Login" : "Sign Up"}?
-      </button>
     </main>
   );
 };

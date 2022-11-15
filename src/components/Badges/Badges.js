@@ -27,7 +27,7 @@ export default function Badges() {
   return (
     <div className={styles.badges_disp}>
       {!badges ? (
-        <h3>loading your badges...</h3>
+        <h3 className={styles.loading}>loading your badges...</h3>
       ) : (
         <div className={styles.badges_disp}>
           <Badge badges={badges} />{" "}

@@ -60,23 +60,22 @@ function NationalParkDetails() {
   return (
     <div className={styles.details_page}>
       {!park.data ? (
-        <h3 className={styles.loading}>Loading park details...</h3>
+        <p className={styles.loading}>Loading park details...</p>
       ) : (
         <>
           <img className={styles.banner} src={park.data[0].images[0].url} />
-          <div className={styles.main_sect}>
-            <section className={styles.badge_disp}>
-              <img
-                onClick={handleCollectBadge}
-                className={styles.badge}
-                src={park.data[0].images[0].url}
-              />
-            </section>
-            <section className={styles.desc_disp}>
-              <h2>{park.data[0].fullName}</h2>
-              <p id={styles.desc}>{park.data[0].description}</p>
-            </section>
-          </div>
+          <section className={styles.desc_disp}>
+            <h2>{park.data[0].fullName}</h2>
+            <p id={styles.desc}>{park.data[0].description}</p>
+
+            <h2>Collect your badge if you have been here!</h2>
+            <img
+              onClick={handleCollectBadge}
+              className={styles.badge}
+              src={park.data[0].images[1].url}
+            />
+          </section>
+
           <button onClick={handleOpen}>Hours of Operation</button>
           {open ? (
             <section className={styles.hours_of_op}>

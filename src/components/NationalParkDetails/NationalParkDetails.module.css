@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+Gurmukhi&family=Playfair+Display&display=swap');
+
 
 
 .details_page{
@@ -7,7 +9,7 @@
     align-items: left;
     text-align: left;
     color: black;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 .hours_of_op {
@@ -15,12 +17,14 @@
     flex-direction: column;
     margin-left: .5rem;
     margin-right: .5rem;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 .days_times{
     display: flex;
     margin-left: .5rem;
     margin-right: .5rem;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 .days, .times {
@@ -45,6 +49,7 @@
     margin-left: .5rem;
     margin-right: .5rem;
     font-size: 1rem;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 button {
@@ -58,7 +63,7 @@ button {
     text-align: left;
     font-size: large;
     height: 4rem;
-    font-weight: 600;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 button:hover {
@@ -69,17 +74,17 @@ button:hover {
     display: flex;
     align-self: center;
     object-fit: cover;
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 100%;
     border-width: .25rem;
     border-style: solid;
     border-color: white;
     box-shadow: 0px 0px 6px 2px rgb(212, 218, 227);
-    margin-top: 2rem;
 }
 .badge:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 8px 5px rgb(212, 218, 227);
 }
 
 h1 {
@@ -93,14 +98,16 @@ h1 {
     flex-direction: column;
     align-items: center;
     align-content: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 2rem;
-    width: 33.33%;
+    width: 50%;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 .loading {
     display: flex;
     align-self: center;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 .learn_more_link {
@@ -109,11 +116,16 @@ h1 {
     margin-bottom: 2rem;
     margin-left: .5rem;
     margin-right: .5rem;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 .main_sect {
     display: flex;
     flex-direction: row;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 .desc_disp {
@@ -123,11 +135,16 @@ h1 {
     align-content: center;
     text-align: center;
     justify-content: center;
-    width: 66.66%;
+    width: 100vw;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
+    margin: 2rem;
 }
 
 #desc {
     width: 70%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Noto Sans Gurmukhi', sans-serif;
 }
 
 
